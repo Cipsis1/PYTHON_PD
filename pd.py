@@ -1,5 +1,4 @@
 import random
-# from random import randint
 miklas = {'Četras kājas, viena cepure':'Galds', 'Zelta puķe krāsnī zied':'Uguns', 'Siers jūras dibenā':'Saule', 'Plikpauris gaisā':'Mēness', 'Galva no dzelzs, kājas no koka':'Āmurs'}
 
 atslegas = list(miklas.keys())
@@ -7,16 +6,13 @@ skaits = 0
 pareizas_atbildes = 0
 
 def randomMikla():
-    return random.choice(list(miklas.keys()))
+    return random.choice(atslegas)
 
 print("Ja vēlies spēli beigt ievadi 'q'!")
 
 while True:
-    # gadijums = randint(0, len(atslegas)-1)
-    # minejums = input(f"{atslegas[gadijums]}: ")
     gadijums = randomMikla()
-    print(gadijums)
-    minejums = input(f"{miklas[gadijums]}: ")
+    minejums = input(f"{gadijums}: ")
     if minejums.lower() == "q":
         print("Paldies par spēli!")
         break
@@ -24,7 +20,7 @@ while True:
         print("Trīs pēc kārtas!")
     elif skaits == 4:
         break
-    elif minejums.capitalize() == miklas[atslegas[gadijums]]:
+    elif minejums.capitalize() == miklas[gadijums]:
         print("Pareizi!")
         pareizas_atbildes += 1
     else:
