@@ -7,8 +7,7 @@ skaits = 0
 pareizas_atbildes = 0
 
 def randomMikla():
-    return
-random.choice(list(miklas.keys()))
+    return random.choice(list(miklas.keys()))
 
 print("Ja vēlies spēli beigt ievadi 'q'!")
 
