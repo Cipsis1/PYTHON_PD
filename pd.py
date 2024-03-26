@@ -1,4 +1,12 @@
 import random
+intro_message = """
+Sveicināti spēlē 'Mīklu minēšana'!
+Spēles mērķis ir atminēt 5 mīklas
+Spēles noteikumi:
+1.Izlasi mīklu un ievadi atbildi!
+2.Ja vēlies beigt spēli ievadi 'q'!
+3.Izbaudi
+"""
 miklas = {'Četras kājas, viena cepure':'Galds', 'Zelta puķe krāsnī zied':'Uguns', 'Siers jūras dibenā':'Saule', 'Plikpauris gaisā':'Mēness', 'Galva no dzelzs, kājas no koka':'Āmurs', 'Zoss ar četriem deguniem':'Spilvens', 'Mežā un mājā vienā vārdā':'Ieva', 'Nekad nesadeg, nekad nenoslīkst':'Ēna', 'Asiņu tēvs līkām kajām':'Ods', 'Otram rāda pats neredz':'Brilles'}
 
 atslegas = list(miklas.keys())
@@ -12,7 +20,8 @@ def punktu_skaitisana(punkti):
 def randomMikla():
     return random.choice(atslegas)
 
-print("Ja vēlies spēli beigt ievadi 'q'!")
+print(intro_message)
+
 
 while True:
     gadijums = randomMikla()
