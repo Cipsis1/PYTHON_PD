@@ -7,7 +7,18 @@ Spēles noteikumi:
 2.Ja vēlies beigt spēli ievadi 'q'!
 3.Izbaudi
 """
-miklas = {'Četras kājas, viena cepure':'Galds', 'Zelta puķe krāsnī zied':'Uguns', 'Siers jūras dibenā':'Saule', 'Plikpauris gaisā':'Mēness', 'Galva no dzelzs, kājas no koka':'Āmurs', 'Zoss ar četriem deguniem':'Spilvens', 'Mežā un mājā vienā vārdā':'Ieva', 'Nekad nesadeg, nekad nenoslīkst':'Ēna', 'Asiņu tēvs līkām kajām':'Ods', 'Otram rāda pats neredz':'Brilles'}
+miklas = {
+    'Četras kājas, viena cepure':'Galds',
+      'Zelta puķe krāsnī zied':'Uguns',
+        'Siers jūras dibenā':'Saule',
+          'Plikpauris gaisā':'Mēness',
+            'Galva no dzelzs, kājas no koka':'Āmurs',
+              'Zoss ar četriem deguniem':'Spilvens',
+                'Mežā un mājā vienā vārdā':'Ieva',
+                  'Nekad nesadeg, nekad nenoslīkst':'Ēna',
+                    'Asiņu tēvs līkām kajām':'Ods',
+                      'Otram rāda pats neredz':'Brilles'
+                      }
 
 atslegas = list(miklas.keys())
 skaits = 0
@@ -27,12 +38,17 @@ while True:
     gadijums = randomMikla()
     minejums = input(f"{gadijums}: ")
     if skaits == 4:
+        if minejums.capitalize() == miklas[gadijums]:
+            print("Pareizi!")
+            punktu_skaitisana(1)
+        else:
+            print("Nepareizi!")
         break
     elif minejums.lower() == "q":
         print("Paldies par spēli!")
         break
-    elif pareizas_atbildes == 2 and pareizas_atbildes < 3:
-        print("Trīs pareizi!")
+    elif pareizas_atbildes == 2:
+        print("Trīs pareizi")
         punktu_skaitisana(1)
     elif minejums.capitalize() == miklas[gadijums]:
         print("Pareizi!")
@@ -40,5 +56,6 @@ while True:
     else:
         print("Nepareizi!")
     skaits +=1
+    
 
 print(f"Tu pareizi atbildēji uz {pareizas_atbildes} no {skaits + 1} jautājumiem!")
