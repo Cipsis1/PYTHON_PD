@@ -32,7 +32,7 @@ while True:
         print("Paldies par spēli!")
         break
     elif pareizas_atbildes == 2 and pareizas_atbildes < 3:
-        print("Trīs pēc kārtas!")
+        print("Trīs pareizi!")
         punktu_skaitisana(1)
     elif minejums.capitalize() == miklas[gadijums]:
         print("Pareizi!")
